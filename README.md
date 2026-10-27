@@ -2,6 +2,8 @@
 
 Restores night-sky stars that DLSS Ray Reconstruction removes in **The Witcher 3 (DX12)**.
 
+[Download on Nexus Mods](https://www.nexusmods.com/witcher3/mods/15191) · [GitHub releases](https://github.com/moistman7/RRStarFix/releases)
+
 RR Star Fix is a ReShade add-on. It detects stars in the game's input to Ray Reconstruction, smooths them over time, and adds them back to the reconstructed image. It activates automatically after checking that the game safely restores its rendering state. No on/off hotkey is needed.
 
 ## Requirements
@@ -25,7 +27,7 @@ On first launch, `RRStarFix.ini` is created beside the add-on. Existing INI file
 
 ## Smoothing
 
-Press **F7** while the game has focus to cycle **medium → strong → light**. Your choice is saved automatically.
+Press **F7** while the game has focus to cycle **medium â†’ strong â†’ light**. Your choice is saved automatically.
 
 | Mode | Effect |
 | --- | --- |
@@ -44,15 +46,15 @@ SnapshotKey=F9
 TraceKey=F10
 ```
 
-Hotkeys support F1–F24, letters, digits, PageUp, PageDown, Home, End, Insert, Delete, Pause, ScrollLock, NumPad0–NumPad9, hex virtual-key codes, and `None` to disable a hotkey. Diagnostics should remain off for normal play.
+Hotkeys support F1â€“F24, letters, digits, PageUp, PageDown, Home, End, Insert, Delete, Pause, ScrollLock, NumPad0â€“NumPad9, hex virtual-key codes, and `None` to disable a hotkey. Diagnostics should remain off for normal play.
 
 ## Compatibility and testing
 
-The tested setup uses an RTX 5090 at 3440×1440 output with 1995×835 internal rendering, alongside RenoDX HDR and other graphics mods. That is one tested setup, not a guarantee for every combination.
+The tested setup uses an RTX 5090 at 3440Ã—1440 output with 1995Ã—835 internal rendering, alongside RenoDX HDR and other graphics mods. That is one tested setup, not a guarantee for every combination.
 
 v0.9.1's log confirmed automatic activation after three safe RR frames, with no RRStarFix errors or automatic disable messages during the approximately 28-minute session inspected before release. Longer play testing is ongoing. All six automated tests passed, including D3D12 debug-layer and GPU-based validation checks. Other GPUs/drivers, DLSS modes/resolutions, HDR configurations, frame-generation combinations, RR switching, alt-tab, and resizing still need broader testing.
 
-Earlier measurements on this setup put the composite at about **0.04 ms GPU time per frame**. It uses two history buffers, about **79 MB at 3440×1440**. These are measurements from one setup; performance can vary.
+Earlier measurements on this setup put the composite at about **0.04 ms GPU time per frame**. It uses two history buffers, about **79 MB at 3440Ã—1440**. These are measurements from one setup; performance can vary.
 
 Known limitations:
 
