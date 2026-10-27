@@ -1,0 +1,6 @@
+if(NOT DEFINED NAME OR NOT DEFINED INPUT OR NOT DEFINED OUTPUT)
+  message(FATAL_ERROR "embed.cmake needs -DNAME, -DINPUT and -DOUTPUT")
+endif()
+file(READ "${INPUT}" SHADER_HEX HEX)
+string(REGEX REPLACE "(..)" "0x\\1," SHADER_BYTES "${SHADER_HEX}")
+file(WRITE "${OUTPUT}" "#pragma once\ninline constexpr unsigned char ${NAME}[] = {${SHADER_BYTES}};\n")
